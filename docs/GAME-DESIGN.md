@@ -27,7 +27,7 @@ Entferntere Flugbahnen erhalten einen kleinen Wertbonus. Treffer innerhalb von 2
 
 Die Flugziele bleiben bewusst kompakt. Ihre serverseitig aufgelösten Flugbahnen halten ungefähr eine halbe sichtbare Zielbreite Abstand, damit sie sich höchstens etwa zur Hälfte verdecken und kein Ziel vollständig hinter einem anderen verschwindet.
 
-Große Ziele werden stärker verkleinert als kleine Ziele; auch Munitionskisten bleiben kompakt. Rund 42 Prozent der fliegenden Ziele erscheinen zunächst mit 25 Prozent ihrer Endgröße und wachsen über 3,2 Sekunden. Solange sie klein sind, schrumpft ihre Trefferfläche mit und ihr Punktwert steigt bis auf das 2,2-Fache.
+Große Ziele werden stärker verkleinert als kleine Ziele; auch Munitionskisten bleiben kompakt. Alle Ziele erscheinen zunächst mit 12 Prozent ihrer Endgröße und wachsen über 5,5 Sekunden. Solange sie klein sind, schrumpft ihre Trefferfläche mit und ihr Punktwert steigt entsprechend an.
 
 ## Steuerung
 
@@ -36,7 +36,7 @@ Große Ziele werden stärker verkleinert als kleine Ziele; auch Munitionskisten 
 - Automatisches Nachladen: startet beim letzten Schuss oder beim Abzug mit leerem Magazin
 - Zielen bleibt während der 1,9 Sekunden langen Nachladephase ohne Unterbrechung aktiv
 
-Der Stick nutzt innen feine und am Rand schnelle Steuerung. Die vorhandene generische Virtual-Joystick-Komponente wurde dafür um einen lokalisierbaren Stick-Hinweis erweitert.
+Der vergrößerte Stick nutzt innen feine Steuerung und eine progressive Kennlinie, die zum Außenrand hin schneller reagiert. Der Controller zeigt während des Spiels ausschließlich Stick und Feuerknopf; Titel, Abmelden- und Vollbild-Chrome werden ausgeblendet.
 
 ## HUD
 
@@ -46,6 +46,7 @@ Der Stick nutzt innen feine und am Rand schnelle Steuerung. Die vorhandene gener
 - Patronen und individuelle Punktzahl unten
 - farbiges, beschriftetes Fadenkreuz pro Spieler
 - Zuckerwolke und schwebender Punktwert bei Treffern
+- kompakte Zeit- und Punktetafeln ohne darüberliegende Raumcode-Anzeige
 
 ## Sounddesign
 

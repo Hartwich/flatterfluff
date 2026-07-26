@@ -2,12 +2,16 @@
 
 Flatterfluff ist eine serverautoritativ ausgewertete Arcade-Zieljagd für Open Party Lab. Ein bis sechs Spieler bewegen je ein farbiges Fadenkreuz mit dem virtuellen Stick, feuern über eine große Aktionstaste und laden ihr Sechs-Schuss-Magazin automatisch nach.
 
+![Flatterfluff – frühe Konzeptgrafik der Zuckerprärie](docs/art/host-concept.png)
+
+*Frühe Konzeptgrafik der Zuckerprärie; das aktuelle Controller- und HUD-Layout ist bewusst reduzierter.*
+
 ## Spielumfang
 
 - 1–6 Spieler auf einem gemeinsamen Host-Screen
 - Zeitjagd von 45–180 Sekunden oder offene Endlosrunde
 - drei fliegende Zieltypen mit eigenen Größen, Geschwindigkeiten und Punktwerten
-- teilweise klein einfliegende, anwachsende Bonusziele mit skalierter Trefferfläche
+- alle Zieltypen fliegen mit 12 Prozent Größe ein und wachsen langsam mit skalierter Trefferfläche
 - gepanzerter Captain mit zwei Trefferpunkten
 - Munitionskisten, Serienbonus, Trefferfeedback und Rangliste
 - sechs sichtbare Patronen pro Magazin

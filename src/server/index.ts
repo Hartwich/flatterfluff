@@ -29,6 +29,8 @@ const reloadDurationMs = 1_900;
 const shotCooldownMs = 145;
 const aimSpeedPerSecond = 0.46;
 const eventHistoryLimit = 36;
+const growingTargetStartScale = 0.12;
+const growingTargetDurationMs = 5_500;
 const typicalHostHeightToWidth = 9 / 16;
 const targetTopBound = 0.17;
 const targetBottomBound = 0.79;
@@ -166,7 +168,7 @@ function spawnTarget(
   random = nextRandom(random.seed);
   const wobblePhase = random.value * Math.PI * 2;
   random = nextRandom(random.seed);
-  const growthDurationMs = kind !== "crate" && random.value < 0.42 ? 3_200 : 0;
+  const growthDurationMs = growingTargetDurationMs;
   const definition = targetDefinitions[kind];
   const facing: -1 | 1 = fromLeft ? 1 : -1;
   const x = fromLeft ? -definition.radius * 1.4 : 1 + definition.radius * 1.4;
@@ -177,7 +179,7 @@ function spawnTarget(
     y: baseY,
     baseY,
     radius: definition.radius,
-    scale: growthDurationMs > 0 ? 0.25 : 1,
+    scale: growingTargetStartScale,
     lane,
     points: definition.points + (2 - lane) * 35,
     hp: definition.hp,
@@ -517,9 +519,10 @@ function tickTargets(state: RuntimeState, deltaMs: number): RuntimeState {
       scale:
         target.growthDurationMs > 0
           ? clamp(
-              0.25 +
-                ((elapsedMs - target.spawnedAtMs) / target.growthDurationMs) * 0.75,
-              0.25,
+              growingTargetStartScale +
+                ((elapsedMs - target.spawnedAtMs) / target.growthDurationMs) *
+                  (1 - growingTargetStartScale),
+              growingTargetStartScale,
               1
             )
           : 1,

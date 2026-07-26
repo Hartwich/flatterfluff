@@ -233,19 +233,19 @@ export class FlatterfluffHostScene extends Phaser.Scene {
   private renderHud(state: FlatterfluffState, width: number, height: number): void {
     const graphics = this.overlay!;
     const compact = width < 1_250;
-    const leftWidth = compact ? 190 : 230;
-    const boardWidth = compact ? 270 : 330;
+    const leftWidth = compact ? 166 : 196;
+    const boardWidth = compact ? 230 : 280;
     const margin = compact ? 14 : 24;
     const top = compact ? 12 : 20;
     graphics.clear();
 
-    this.drawWoodPanel(graphics, margin, top, leftWidth, compact ? 92 : 108);
+    this.drawWoodPanel(graphics, margin, top, leftWidth, compact ? 78 : 92);
     this.drawWoodPanel(
       graphics,
       width - boardWidth - margin,
       top,
       boardWidth,
-      compact ? 142 : 178
+      compact ? 126 : 154
     );
 
     this.titleText
@@ -254,11 +254,12 @@ export class FlatterfluffHostScene extends Phaser.Scene {
       .setVisible(width >= 900);
     this.timerLabel
       ?.setText(this.language === "en" ? "TIME" : "ZEIT")
-      .setPosition(margin + leftWidth / 2 + (compact ? 18 : 24), top + 10);
+      .setPosition(margin + leftWidth / 2 + (compact ? 14 : 18), top + 8)
+      .setFontSize(compact ? 15 : 17);
     this.timerText
       ?.setText(formatTime(state.remainingMs))
-      .setPosition(margin + leftWidth / 2, top + (compact ? 34 : 38))
-      .setFontSize(compact ? 34 : 42);
+      .setPosition(margin + leftWidth / 2, top + (compact ? 29 : 33))
+      .setFontSize(compact ? 28 : 34);
     this.modeText
       ?.setText(
         state.mode === "endless"
@@ -269,11 +270,12 @@ export class FlatterfluffHostScene extends Phaser.Scene {
             ? "TIMED"
             : "ZEITJAGD"
       )
-      .setPosition(margin + leftWidth / 2, top + (compact ? 83 : 98));
+      .setPosition(margin + leftWidth / 2, top + (compact ? 69 : 82))
+      .setFontSize(compact ? 13 : 15);
     this.scoreboardLabel
       ?.setText(this.language === "en" ? "SCORE" : "PUNKTE")
       .setPosition(width - boardWidth / 2 - margin, top + 8)
-      .setFontSize(compact ? 16 : 19);
+      .setFontSize(compact ? 14 : 16);
 
     const sortedPlayers = [...state.players].sort((left, right) => right.score - left.score);
     sortedPlayers.forEach((player, index) => {
@@ -284,9 +286,9 @@ export class FlatterfluffHostScene extends Phaser.Scene {
         .setColor(player.color)
         .setPosition(
           width - boardWidth - margin + 18,
-          top + (compact ? 34 : 39) + index * (compact ? 19 : 23)
+          top + (compact ? 30 : 34) + index * (compact ? 17 : 20)
         )
-        .setFontSize(compact ? 15 : 18);
+        .setFontSize(compact ? 13 : 15);
     });
     for (let index = sortedPlayers.length; index < this.scoreboardTexts.length; index += 1) {
       this.scoreboardTexts[index].setVisible(false);
