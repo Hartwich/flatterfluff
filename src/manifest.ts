@@ -61,7 +61,12 @@ export const flatterfluffManifest = {
     lockedMs: 2_500,
     resultMs: 4_500,
     scoreboardMs: 4_500
-  }
+  },
+
+  ownsScreens: ["round_intro", "result"],
+  visual: { accent: "#c98a9a", eyebrow: "Flap" },
+  audio: { track: { profile: "sugarCountry", bpm: 108, rootMidi: 50, masterGain: 0.13 } },
+  controllerChrome: { bare: true },
 } as const satisfies GameManifest;
 
 export const manifest = flatterfluffManifest;

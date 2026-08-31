@@ -6,6 +6,7 @@ import type {
   FlatterfluffTargetKind
 } from "../protocol.js";
 import { FlatterfluffAudioRig } from "./FlatterfluffAudio.js";
+import { renderRoundScreens } from "./roundScreens.js";
 
 interface HostClientLike {
   subscribe(callback: (state: HostAppStateLike) => void): () => void;
@@ -83,6 +84,11 @@ export class FlatterfluffHostScene extends Phaser.Scene {
 
     const client = this.registry.get("hostClient") as HostClientLike;
     this.unsubscribe = client.subscribe((appState) => {
+      // Intro and result screens belong to this game, not the platform.
+      if (renderRoundScreens(this, appState)) {
+        return;
+      }
+
       const nextState = (appState.game?.state ?? null) as FlatterfluffState | null;
       this.language = appState.room?.language ?? "de";
       if (!nextState) {
