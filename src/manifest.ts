@@ -64,7 +64,7 @@ export const flatterfluffManifest = {
   },
 
   ownsScreens: ["round_intro", "result"],
-  visual: { accent: "#c98a9a", eyebrow: "Flap" },
+  visual: { accent: "#c98a9a", icon: "bird", eyebrow: "Flap" },
   audio: { track: { profile: "sugarCountry", bpm: 108, rootMidi: 50, masterGain: 0.13 } },
   controllerChrome: { bare: true },
 } as const satisfies GameManifest;
