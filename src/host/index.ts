@@ -255,7 +255,8 @@ export class FlatterfluffHostScene extends Phaser.Scene {
     );
 
     this.titleText
-      ?.setPosition(width / 2, compact ? 8 : 12)
+      ?.setText(flatterfluffManifest.translations[this.language].displayName.toUpperCase())
+      .setPosition(width / 2, compact ? 8 : 12)
       .setFontSize(compact ? 42 : 58)
       .setVisible(width >= 900);
     this.timerLabel

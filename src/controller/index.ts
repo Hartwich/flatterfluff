@@ -79,7 +79,7 @@ export function buildFlatterfluffControllerModel(
     (gameState?.serverNow ?? 0) < player.reloadEndsAt;
   return {
     kind: "virtual_joystick",
-    title: flatterfluffManifest.displayName,
+    title: flatterfluffManifest.translations[en ? "en" : "de"].displayName,
     cleanChrome: true,
     disabled: !playing,
     accentColor: player?.color ?? context.state.player?.color ?? "#22d3ee",

@@ -1,3 +1,4 @@
+import { flatterfluffText } from "./catalogText.js";
 import type { GameManifest } from "@open-party-lab/game-core";
 
 export const flatterfluffRoomSettingKeys = {
@@ -7,6 +8,7 @@ export const flatterfluffRoomSettingKeys = {
 
 export const flatterfluffManifest = {
   id: "flatterfluff",
+  translations: flatterfluffText,
   displayName: "Flatterfluff",
   description:
     "Rasante Zuckerprärie-Zieljagd mit geflügelten Marshmallows, Nachladen, Munitionskisten und bis zu sechs farbigen Fadenkreuzen.",

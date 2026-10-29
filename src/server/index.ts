@@ -692,8 +692,8 @@ export const serverGame: ServerGame<RuntimeState, FlatterfluffInput, Flatterfluf
   isRoundFinished(state) {
     return state.phase === "locked";
   },
-  buildScore(state) {
-    return buildScore(state);
+  buildScore(state, context) {
+    return buildScore(state).map(entry => ({ ...entry, reason: context.language === "en" ? "Flutterfluff score" : "Flatterfluff Punkte" }));
   },
   toPublicState(state) {
     return toPublicState(state);
